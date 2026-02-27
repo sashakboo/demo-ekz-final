@@ -1,0 +1,14 @@
+{
+  "name": "banquet-portal",
+  "version": "1.0.0",
+  "description": "Портал бронирования помещений для банкетов «Банкетам.Нет»",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
