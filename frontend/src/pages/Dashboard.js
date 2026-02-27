@@ -17,7 +17,6 @@ const Dashboard = ({ token, user }) => {
   const fetchBookings = async () => {
     try {
       const response = await axios.get('/api/bookings/my', {
-        //headers: { Authorization: `Bearer ${token}` }
         headers: { Authorization: `${token}` }
       });
       setBookings(response.data);
@@ -41,7 +40,6 @@ const Dashboard = ({ token, user }) => {
         rating: reviewData.rating,
         comment: reviewData.comment
       }, {
-        //headers: { Authorization: `Bearer ${token}` }
         headers: { Authorization: `${token}` }
       });
       setMessage({ type: 'success', text: 'Отзыв успешно оставлен!' });

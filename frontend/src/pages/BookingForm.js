@@ -58,7 +58,6 @@ const BookingForm = ({ token, user }) => {
         event_date: formattedDate,
         payment_method: formData.payment_method
       }, {
-        //headers: { Authorization: `Bearer ${token}` }
         headers: { Authorization: `${token}` }
       });
       setSuccess(true);

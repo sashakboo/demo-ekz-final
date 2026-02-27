@@ -21,7 +21,6 @@ const AdminPanel = ({ token }) => {
   const fetchBookings = async () => {
     try {
       const response = await axios.get('/api/admin/bookings', {
-        //headers: { Authorization: `Bearer ${token}` }
         headers: { Authorization: `${token}` }
       });
       setBookings(response.data);
