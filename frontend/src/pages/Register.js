@@ -43,10 +43,10 @@ const Register = ({ onLogin }) => {
 
   return (
     <Box sx={{ maxWidth: 400, mx: 'auto', mt: 4, p: 3, boxShadow: 3, borderRadius: 2, bgcolor: 'background.paper' }}>
-      <Typography variant="h4" component="h1" gutterBottom align="center" color="primary">
+      <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#DC143C', fontSize: '36px' }}>
         Регистрация
       </Typography>
-      
+
       {serverError && <Alert severity="error" sx={{ mb: 2 }}>{serverError}</Alert>}
       {errors.map((error, index) => (
         <Alert key={index} severity="error" sx={{ mb: 1 }}>{error.msg}</Alert>
@@ -149,7 +149,7 @@ const Register = ({ onLogin }) => {
           Зарегистрироваться
         </Button>
         <Box sx={{ textAlign: 'center' }}>
-          <Link to="/login" style={{ textDecoration: 'none', color: '#1976d2' }}>
+          <Link to="/login" style={{ textDecoration: 'none', color: '#DAA520', fontWeight: 500 }}>
             Уже есть аккаунт? Войти
           </Link>
         </Box>

@@ -57,9 +57,9 @@ const Slider = ({ images }) => {
               top: '50%',
               left: 0,
               transform: 'translateY(-50%)',
-              bgcolor: 'rgba(0,0,0,0.3)',
+              bgcolor: 'rgba(218, 165, 32, 0.7)',
               color: 'white',
-              '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' },
+              '&:hover': { bgcolor: 'rgba(218, 165, 32, 0.9)' },
             }}
           >
             <ArrowBackIos />
@@ -71,9 +71,9 @@ const Slider = ({ images }) => {
               top: '50%',
               right: 0,
               transform: 'translateY(-50%)',
-              bgcolor: 'rgba(0,0,0,0.3)',
+              bgcolor: 'rgba(218, 165, 32, 0.7)',
               color: 'white',
-              '&:hover': { bgcolor: 'rgba(0,0,0,0.5)' },
+              '&:hover': { bgcolor: 'rgba(218, 165, 32, 0.9)' },
             }}
           >
             <ArrowForwardIos />

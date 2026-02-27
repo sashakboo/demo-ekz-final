@@ -111,7 +111,7 @@ const AdminPanel = ({ token }) => {
 
   return (
     <Box sx={{ mt: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom sx={{ color: '#DC143C', fontSize: '36px' }}>
         Панель администратора
       </Typography>
 
@@ -128,8 +128,8 @@ const AdminPanel = ({ token }) => {
           value={filter}
           onChange={(e) => { setFilter(e.target.value); setPage(1); }}
           SelectProps={{ native: true }}
-          sx={{ minWidth: 200 }}
-          InputProps={{ startAdornment: <FilterList sx={{ mr: 1, color: 'action.active' }} /> }}
+          sx={{ minWidth: 200, '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#DAA520' } } }}
+          InputProps={{ startAdornment: <FilterList sx={{ mr: 1, color: '#DAA520' }} /> }}
         >
           <option value="all">Все заявки</option>
           <option value="Новая">Новые</option>
@@ -189,7 +189,7 @@ const AdminPanel = ({ token }) => {
                         size="small"
                         color="success"
                         onClick={() => handleOpenStatusDialog(booking, 'Банкет назначен')}
-                        sx={{ minWidth: 'auto', mr: 1 }}
+                        sx={{ minWidth: 'auto', mr: 1, color: '#006400', '&:hover': { bgcolor: 'rgba(0, 100, 0, 0.1)' } }}
                       >
                         <CheckIcon />
                       </Button>
@@ -197,7 +197,7 @@ const AdminPanel = ({ token }) => {
                         size="small"
                         color="error"
                         onClick={() => handleOpenStatusDialog(booking, 'Банкет завершен')}
-                        sx={{ minWidth: 'auto' }}
+                        sx={{ minWidth: 'auto', color: '#DC143C', '&:hover': { bgcolor: 'rgba(220, 20, 60, 0.1)' } }}
                       >
                         <CloseIcon />
                       </Button>
@@ -208,6 +208,7 @@ const AdminPanel = ({ token }) => {
                       size="small"
                       color="success"
                       onClick={() => handleOpenStatusDialog(booking, 'Банкет завершен')}
+                      sx={{ color: '#006400', '&:hover': { bgcolor: 'rgba(0, 100, 0, 0.1)' } }}
                     >
                       Завершить
                     </Button>
@@ -228,6 +229,7 @@ const AdminPanel = ({ token }) => {
           <Button
             disabled={page === 1}
             onClick={() => setPage(page - 1)}
+            sx={{ color: '#DAA520', '&.Mui-disabled': { color: '#CCC' } }}
           >
             Назад
           </Button>
@@ -236,7 +238,7 @@ const AdminPanel = ({ token }) => {
               key={p}
               variant={page === p ? 'contained' : 'outlined'}
               onClick={() => setPage(p)}
-              sx={{ minWidth: 40 }}
+              sx={{ minWidth: 40, color: '#DAA520', borderColor: '#DAA520', '&.MuiButton-contained': { bgcolor: '#DAA520', color: '#000' } }}
             >
               {p}
             </Button>
@@ -244,6 +246,7 @@ const AdminPanel = ({ token }) => {
           <Button
             disabled={page === totalPages}
             onClick={() => setPage(page + 1)}
+            sx={{ color: '#DAA520' }}
           >
             Вперед
           </Button>
@@ -256,7 +259,7 @@ const AdminPanel = ({ token }) => {
 
       {/* Диалог подтверждения смены статуса */}
       <Dialog open={statusDialog.open} onClose={() => setStatusDialog({ open: false, bookingId: null, bookingName: '', currentStatus: '', newStatus: '' })}>
-        <DialogTitle>Подтверждение</DialogTitle>
+        <DialogTitle sx={{ color: '#DC143C', fontSize: '24px' }}>Подтверждение</DialogTitle>
         <DialogContent>
           <Typography>
             Изменить статус заявки <b>{statusDialog.bookingName}</b> на <b>{statusDialog.newStatus}</b>?
@@ -266,7 +269,7 @@ const AdminPanel = ({ token }) => {
           <Button onClick={() => setStatusDialog({ open: false, bookingId: null, bookingName: '', currentStatus: '', newStatus: '' })}>
             Отмена
           </Button>
-          <Button onClick={confirmStatusChange} variant="contained" color="primary">
+          <Button onClick={confirmStatusChange} variant="contained" sx={{ bgcolor: '#DAA520', '&:hover': { bgcolor: '#C9951D' } }}>
             Подтвердить
           </Button>
         </DialogActions>

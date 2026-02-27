@@ -73,7 +73,7 @@ const Dashboard = ({ token, user }) => {
 
   return (
     <Box sx={{ mt: 4 }}>
-      <Typography variant="h4" component="h4" gutterBottom>
+      <Typography variant="h4" component="h4" gutterBottom sx={{ color: '#DC143C', fontSize: '36px' }}>
         {user?.fullname}
       </Typography>
 
@@ -84,12 +84,12 @@ const Dashboard = ({ token, user }) => {
       )}
 
       <Box sx={{ mb: 3 }}>
-        <Button variant="contained" href="/booking" startIcon={<EventIcon />}>
+        <Button variant="contained" href="/booking" startIcon={<EventIcon />} sx={{ bgcolor: '#DAA520', '&:hover': { bgcolor: '#C9951D' } }}>
           Создать новую заявку
         </Button>
       </Box>
 
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" gutterBottom sx={{ color: '#DAA520', fontSize: '18px' }}>
         История заявок
       </Typography>
 
@@ -135,6 +135,7 @@ const Dashboard = ({ token, user }) => {
                       onClick={() => handleOpenReview(booking)}
                       startIcon={<CheckCircleIcon />}
                       fullWidth
+                      sx={{ color: '#DAA520', borderColor: '#DAA520', '&:hover': { borderColor: '#C9951D', bgcolor: 'rgba(218, 165, 32, 0.1)' } }}
                     >
                       Оставить отзыв
                     </Button>
@@ -174,7 +175,7 @@ const Dashboard = ({ token, user }) => {
           <Button onClick={() => setReviewDialog({ open: false, bookingId: null, bookingName: '' })}>
             Отмена
           </Button>
-          <Button onClick={handleSubmitReview} variant="contained" disabled={!reviewData.comment.trim()}>
+          <Button onClick={handleSubmitReview} variant="contained" disabled={!reviewData.comment.trim()} sx={{ bgcolor: '#DAA520', '&:hover': { bgcolor: '#C9951D' } }}>
             Отправить
           </Button>
         </DialogActions>

@@ -11,35 +11,35 @@ const Navbar = ({ token, user, onLogout }) => {
 
   const drawer = (
     <List>
-      <ListItem button component="a" href="/dashboard">
-        <ListItemIcon><DashboardIcon /></ListItemIcon>
+      <ListItem button component="a" href="/dashboard" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+        <ListItemIcon sx={{ color: 'inherit' }}><DashboardIcon /></ListItemIcon>
         <ListItemText primary="Личный кабинет" />
       </ListItem>
       {token ? (
         <>
-          <ListItem button component="a" href="/booking">
-            <ListItemIcon><AddBoxIcon /></ListItemIcon>
+          <ListItem button component="a" href="/booking" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+            <ListItemIcon sx={{ color: 'inherit' }}><AddBoxIcon /></ListItemIcon>
             <ListItemText primary="Новая заявка" />
           </ListItem>
           {user?.isAdmin && (
-            <ListItem button component="a" href="/admin">
-              <ListItemIcon><AdminPanelSettingsIcon /></ListItemIcon>
+            <ListItem button component="a" href="/admin" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+              <ListItemIcon sx={{ color: 'inherit' }}><AdminPanelSettingsIcon /></ListItemIcon>
               <ListItemText primary="Админ-панель" />
             </ListItem>
           )}
-          <ListItem button onClick={onLogout}>
-            <ListItemIcon><LogoutIcon /></ListItemIcon>
+          <ListItem button onClick={onLogout} sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+            <ListItemIcon sx={{ color: 'inherit' }}><LogoutIcon /></ListItemIcon>
             <ListItemText primary="Выйти" />
           </ListItem>
         </>
       ) : (
         <>
-          <ListItem button component="a" href="/login">
-            <ListItemIcon><PersonIcon /></ListItemIcon>
+          <ListItem button component="a" href="/login" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+            <ListItemIcon sx={{ color: 'inherit' }}><PersonIcon /></ListItemIcon>
             <ListItemText primary="Вход" />
           </ListItem>
-          <ListItem button component="a" href="/register">
-            <ListItemIcon><PersonIcon /></ListItemIcon>
+          <ListItem button component="a" href="/register" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
+            <ListItemIcon sx={{ color: 'inherit' }}><PersonIcon /></ListItemIcon>
             <ListItemText primary="Регистрация" />
           </ListItem>
         </>
@@ -48,7 +48,7 @@ const Navbar = ({ token, user, onLogout }) => {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: '#DAA520' }}>
       <Toolbar>
         <IconButton
           color="inherit"
@@ -58,31 +58,31 @@ const Navbar = ({ token, user, onLogout }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 600 }}>
           Банкетам.Нет
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {token ? (
             <>
-              <Button color="inherit" href="/dashboard">
+              <Button color="inherit" href="/dashboard" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
                 <DashboardIcon sx={{ mr: 0.5, fontSize: 20 }} /> Кабинет
               </Button>
-              <Button color="inherit" href="/booking">
+              <Button color="inherit" href="/booking" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
                 <AddBoxIcon sx={{ mr: 0.5, fontSize: 20 }} /> Заявка
               </Button>
               {user?.isAdmin && (
-                <Button color="inherit" href="/admin">
+                <Button color="inherit" href="/admin" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
                   <AdminPanelSettingsIcon sx={{ mr: 0.5, fontSize: 20 }} /> Админ
                 </Button>
               )}
-              <Button color="inherit" onClick={onLogout}>
+              <Button color="inherit" onClick={onLogout} sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>
                 <LogoutIcon sx={{ mr: 0.5, fontSize: 20 }} /> Выйти
               </Button>
             </>
           ) : (
             <>
-              <Button color="inherit" href="/login">Вход</Button>
-              <Button color="inherit" href="/register">Регистрация</Button>
+              <Button color="inherit" href="/login" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>Вход</Button>
+              <Button color="inherit" href="/register" sx={{ '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}>Регистрация</Button>
             </>
           )}
         </Box>
@@ -94,7 +94,7 @@ const Navbar = ({ token, user, onLogout }) => {
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240, bgcolor: '#DAA520' },
         }}
       >
         {drawer}

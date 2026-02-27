@@ -76,7 +76,7 @@ const BookingForm = ({ token, user }) => {
 
   return (
     <Box sx={{ maxWidth: 600, mx: 'auto', mt: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom align="center" color="primary">
+      <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#DC143C', fontSize: '36px' }}>
         Оформление заявки
       </Typography>
 
